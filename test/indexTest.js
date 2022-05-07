@@ -80,8 +80,8 @@ describe( "submitData()", () => {
         code: '401',
       } )
 
-    let name = "Jim"
-    let email = "jim@jim.com"
+    let name = "Mo"
+    let email = "niquelemo@gmail.com"
 
     await submitData( name, email )
     expect( document.body.innerHTML )

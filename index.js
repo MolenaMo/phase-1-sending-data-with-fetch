@@ -1,40 +1,39 @@
-// Add your code here
 const user = {
-    name: "Steve",
-    email: "steve@steve.com",
-  };
-  
-  const userData = {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      Accept: "application/json",
-    },
-    body: JSON.stringify(user),
-  };
-  
-  function submitData() {
-    return fetch("http://localhost:3000/users", userData)
-      .then((resp) => {
-        return resp.json();
-      })
-      .then((obj) => {
-        steveOnDOM(obj);
-      })
-      .catch((err) => {
-        alertMsg(err);
-      });
-  }
-  
-  function steveOnDOM(obj) {
-    console.log(obj);
-    let p = document.createElement("p");
-    p.innerHTML = `User: ${obj.name} | Email: ${obj.email} | Id: ${obj.id}`;
-    document.body.appendChild(p);
-  }
-  
-  function alertMsg(err) {
-    let h1 = document.createElement("h1");
-    h1.innerHTML = `${err}`;
-    document.body.appendChild(h1);
-  }
+  name: "Steve",
+  email: "steve@steve.com",
+};
+
+const config = {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+    Accept: "application/json",
+  },
+  body: JSON.stringify(user),
+};
+
+function submitData() {
+  return fetch("http://localhost:3000/users", config)
+    .then((resp) => {
+      return resp.json();
+    })
+    .then((object) => {
+      userOnTheDOM(object);
+    })
+    .catch((error) => {
+      alertMsg(error);
+    });
+}
+
+function userOnTheDOM(object) {
+  console.log(object);
+  let p = document.createElement("p");
+  p.innerHTML = `User: ${object.name} | Email: ${object.email} | Id: ${object.id}`;
+  document.body.appendChild(p);
+}
+
+function alertMsg(error) {
+  let h1 = document.createElement("h1");
+  h1.innerHTML = `${error}`;
+  document.body.appendChild(h1);
+}

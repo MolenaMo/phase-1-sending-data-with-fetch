@@ -5,11 +5,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>JavaScript Lab</title>
+    <title>JS Sending Data w/Fetch Lab</title>
+    <script src="index.js"></script>
   </head>
 
   <body>
-    <script src="index.js"></script>
+    <h1>Users Form</h1>
+    <form action="http://localhost:3000/users" method="POST">
+      <label> Name: <input type="text" name="name" id="name" /></label><br />
+      <label> Email: <input type="text" name="email" id="email" /></label><br />
+      <input type="submit" id="submit" value="Submit" />
+    </form>
   </body>
 
 </html>
